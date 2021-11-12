@@ -1,0 +1,507 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.34.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: cao zhenrui, tju, LIC=585FJ-U2VQU-JJM6S-LIK66-TL52C-VTCJB
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.34.0.0
+Toolchain Path:  F:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.34.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.8.0
+Dialog DLL:      TCM.DLL V1.48.0.0
+ 
+<h2>Project:</h2>
+D:\KeilProject\BMS\BMS with GBT\USER\Template.uvprojx
+Project File Date:  11/01/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'F:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'Template'
+assembling startup_stm32f40_41xxx.s...
+compiling stm32f4xx_dma.c...
+compiling stm32f4xx_it.c...
+compiling misc.c...
+compiling stm32f4xx_dac.c...
+compiling stm32f4xx_dbgmcu.c...
+compiling stm32f4xx_cryp_tdes.c...
+compiling stm32f4xx_adc.c...
+compiling system_stm32f4xx.c...
+compiling stm32f4xx_cryp_des.c...
+compiling stm32f4xx_cryp.c...
+compiling stm32f4xx_crc.c...
+compiling stm32f4xx_can.c...
+compiling stm32f4xx_dcmi.c...
+compiling stm32f4xx_cryp_aes.c...
+compiling main.c...
+FreeRTOSConfig.h(45): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifdef defined(__ICCARM__) // || defined(__CC_ARM) ||defined(__GUNC__)  //根据CSDN博客修改,更改SystemCoreClock条件编译条件
+..\HARDWARE\CAN\can.h(68): warning:  #1295-D: Deprecated declaration CAN1_Mode_Init - give arg types
+  void CAN1_Mode_Init();
+..\HARDWARE\CAN\can.h(79): warning:  #1295-D: Deprecated declaration start_can1_connect - give arg types
+  void start_can1_connect();
+..\HARDWARE\CAN\can.h(80): warning:  #1295-D: Deprecated declaration CAN1_RxMsg_Process - give arg types
+  u8 CAN1_RxMsg_Process();
+..\HARDWARE\RS485\rs485_screen.h(47): warning:  #2775-D: white space is required between the macro name "VOL_B" and its replacement text
+  #define  VOL_B+_ADDR           0x1038  //高压: B+(2字节整数)
+..\HARDWARE\EXTERNCAN\extern_can.h(17): warning:  #1295-D: Deprecated declaration Judge_Msg - give arg types
+  void Judge_Msg();
+..\HARDWARE\RS485\rs485_DTU.h(54): warning:  #1295-D: Deprecated declaration DTU_UploadBCUData - give arg types
+  void DTU_UploadBCUData();
+..\HARDWARE\RS485\rs485_insulation.h(63): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\HARDWARE\ADC\adc_power.h(20): warning:  #1295-D: Deprecated declaration ADC_Inside_Init - give arg types
+  void ADC_Inside_Init();   //该项目需要使用的ST内部ADC功能初始化
+main.c(155): warning:  #223-D: function "uart7_init" declared implicitly
+  	uart7_init(115200);                                    //串口与PC上位机交互控制功能初始化
+main.c(100): warning:  #177-D: variable "testdata1"  was declared but never referenced
+  	u8 testdata1[10] = "123456789";
+main.c(102): warning:  #177-D: variable "i"  was declared but never referenced
+  	uint16_t i=0;
+main.c(103): warning:  #177-D: variable "u16data"  was declared but never referenced
+    u16 u16data;  //测试IIC数据转换
+main.c(104): warning:  #177-D: variable "sidata"  was declared but never referenced
+  	short int sidata;  //测试IIC数据转换
+main.c(105): warning:  #177-D: variable "dataf"  was declared but never referenced
+  	float dataf;  //测试IIC数据转换
+main.c(106): warning:  #177-D: variable "iic_flag"  was declared but never referenced
+  	u8 iic_flag;
+main.c(107): warning:  #177-D: variable "chip"  was declared but never referenced
+  	u8 chip = 0;
+main.c(108): warning:  #177-D: variable "j"  was declared but never referenced
+  	u8 j;
+main.c(109): warning:  #177-D: variable "bmu_loop_i"  was declared but never referenced
+  	u8 bmu_loop_i,bmu_loop_j,bcu_loop_i,bcu_loop_j;  //主函数中循环
+main.c(109): warning:  #177-D: variable "bmu_loop_j"  was declared but never referenced
+  	u8 bmu_loop_i,bmu_loop_j,bcu_loop_i,bcu_loop_j;  //主函数中循环
+main.c(109): warning:  #177-D: variable "bcu_loop_i"  was declared but never referenced
+  	u8 bmu_loop_i,bmu_loop_j,bcu_loop_i,bcu_loop_j;  //主函数中循环
+main.c(109): warning:  #177-D: variable "bcu_loop_j"  was declared but never referenced
+  	u8 bmu_loop_i,bmu_loop_j,bcu_loop_i,bcu_loop_j;  //主函数中循环
+main.c(110): warning:  #177-D: variable "bmucelln"  was declared but never referenced
+  	u8 bmucelln,bmutempn,bmucount_i;
+main.c(110): warning:  #177-D: variable "bmutempn"  was declared but never referenced
+  	u8 bmucelln,bmutempn,bmucount_i;
+main.c(110): warning:  #177-D: variable "bmucount_i"  was declared but never referenced
+  	u8 bmucelln,bmutempn,bmucount_i;
+main.c(111): warning:  #177-D: variable "loop_i"  was declared but never referenced
+  	u8 loop_i,loop_j;  //"先赋个值"循环
+main.c(111): warning:  #177-D: variable "loop_j"  was declared but never referenced
+  	u8 loop_i,loop_j;  //"先赋个值"循环
+main.c(112): warning:  #177-D: variable "tshow"  was declared but never referenced
+  	float tshow;
+main.c(113): warning:  #177-D: variable "tmp_cell_codes"  was declared but never referenced
+  	u16 tmp_cell_codes[1][12];
+main.c(114): warning:  #177-D: variable "tmp_aux_codes"  was declared but never referenced
+  	u16 tmp_aux_codes[1][6];
+main.c(115): warning:  #177-D: variable "tmppower"  was declared but never referenced
+  	u16 tmppower;
+main.c(793): warning:  #177-D: variable "flag"  was declared but never referenced
+  	u8 flag;
+main.c(876): warning:  #223-D: function "IIC_StartHVConvert" declared implicitly
+  	IIC_StartHVConvert(0);  //开启B+(CH0)单极模式
+main.c(878): warning:  #223-D: function "IIC_ReadHVData" declared implicitly
+  		IIC_ReadHVData(0);  //读取B+(CH0)转换结果数据
+main.c(927): warning:  #223-D: function "IIC_StartCurrentConvert" declared implicitly
+  		IIC_StartCurrentConvert(1);  //代码中设定CH0为正,实际目前板子接反了,CH0是负
+main.c(929): warning:  #223-D: function "IIC_ReadCurrentData" declared implicitly
+  		IIC_ReadCurrentData();
+main.c(947): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  			if(currentf>STANDCURRENT_LINE){  //电流值大于阈值
+main.c(952): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  			if((-currentf)>STANDCURRENT_LINE){
+main.c(991): warning:  #177-D: variable "loop_j"  was declared but never referenced
+  	u8 loop_i,loop_j;
+main.c(1060): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		if((tempf[loop_i]>(-10.0))&&(tempf[loop_i]<60.0)){  //数据属于"正常"数据
+main.c(1034): warning:  #177-D: variable "tmpvolftotal"  was declared but never referenced
+  	float tmpvolftotal=0,tmptempftotal=0;
+main.c(1036): warning:  #177-D: variable "loop_j"  was declared but never referenced
+  	u16 tmpvolnum=0,tmptempfnum=0,loop_i,loop_j;
+main.c(1113): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		soc_calculate(currentf, min_cellvol,((float)bmucontroltask_delay)*0.001);
+main.c(1132): warning:  #177-D: variable "tmpbalancetargetvol"  was declared but never referenced
+  	u16 tmpbalancetargetvol;
+main.c(1133): warning:  #177-D: variable "pknum"  was declared but never referenced
+  	u8 loop_i,pknum,pknum_1,cellid;
+main.c(1136): warning:  #550-D: variable "tmp_celltobalance_vol"  was set but never used
+  	u16 tmp_celltobalance_vol[BALANCE_NUM];     //本次均衡电池电压	
+main.c(1231): warning:  #177-D: variable "state"  was declared but never referenced
+    u8 state;
+main.c: 47 warnings, 0 errors
+compiling stm32f4xx_gpio.c...
+compiling stm32f4xx_i2c.c...
+compiling stm32f4xx_exti.c...
+compiling stm32f4xx_hash_md5.c...
+compiling stm32f4xx_flash.c...
+compiling stm32f4xx_hash_sha1.c...
+compiling stm32f4xx_pwr.c...
+compiling stm32f4xx_flash_ramfunc.c...
+compiling stm32f4xx_fsmc.c...
+compiling stm32f4xx_iwdg.c...
+compiling stm32f4xx_dma2d.c...
+compiling stm32f4xx_hash.c...
+compiling stm32f4xx_ltdc.c...
+compiling stm32f4xx_rcc.c...
+compiling stm32f4xx_rng.c...
+compiling delay.c...
+compiling tick.c...
+..\SYSTEM\tick\tick.h(4): warning:  #1-D: last line of file ends without a newline
+  uint32_t millis(void);
+..\SYSTEM\tick\tick.c: 1 warning, 0 errors
+compiling stm32f4xx_syscfg.c...
+compiling stm32f4xx_wwdg.c...
+compiling stm32f4xx_usart.c...
+compiling stm32f4xx_sdio.c...
+compiling stm32f4xx_spi.c...
+compiling timer.c...
+..\HARDWARE\CAN\can.h(68): warning:  #1295-D: Deprecated declaration CAN1_Mode_Init - give arg types
+  void CAN1_Mode_Init();
+..\HARDWARE\CAN\can.h(79): warning:  #1295-D: Deprecated declaration start_can1_connect - give arg types
+  void start_can1_connect();
+..\HARDWARE\CAN\can.h(80): warning:  #1295-D: Deprecated declaration CAN1_RxMsg_Process - give arg types
+  u8 CAN1_RxMsg_Process();
+..\HARDWARE\TIMER\timer.c: 3 warnings, 0 errors
+compiling stm32f4xx_sai.c...
+compiling stm32f4xx_rtc.c...
+compiling stm32f4xx_tim.c...
+compiling sys.c...
+compiling rs485_screen.c...
+..\HARDWARE\RS485\rs485_screen.h(47): warning:  #2775-D: white space is required between the macro name "VOL_B" and its replacement text
+  #define  VOL_B+_ADDR           0x1038  //高压: B+(2字节整数)
+..\HARDWARE\RS485\rs485_screen.c: 1 warning, 0 errors
+compiling usart.c...
+..\HARDWARE\RS485\rs485_DTU.h(54): warning:  #1295-D: Deprecated declaration DTU_UploadBCUData - give arg types
+  void DTU_UploadBCUData();
+..\SYSTEM\usart\usart.c(58): warning:  #177-D: variable "NVIC_InitStructure"  was declared but never referenced
+  	NVIC_InitTypeDef NVIC_InitStructure;
+..\SYSTEM\usart\usart.c: 2 warnings, 0 errors
+compiling adc_hv.c...
+..\HARDWARE\ADC\adc_hv.c(41): warning:  #550-D: variable "hvdata"  was set but never used
+  	u16 hvdata = 0;
+..\HARDWARE\ADC\adc_hv.c: 1 warning, 0 errors
+compiling adc_current.c...
+..\HARDWARE\ADC\adc_current.c(58): warning:  #940-D: missing return statement at end of non-void function "IIC_ReadCurrentData" 
+  }
+..\HARDWARE\ADC\adc_current.c(43): warning:  #550-D: variable "currdata"  was set but never used
+  	u16 currdata = 0;
+..\HARDWARE\ADC\adc_current.c(44): warning:  #177-D: variable "currdataf"  was declared but never referenced
+  	float currdataf;
+..\HARDWARE\ADC\adc_current.c: 3 warnings, 0 errors
+compiling bms_state.c...
+compiling rs485_insulation.c...
+..\HARDWARE\RS485\rs485_insulation.h(63): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\HARDWARE\RS485\rs485_DTU.h(54): warning:  #1295-D: Deprecated declaration DTU_UploadBCUData - give arg types
+  void DTU_UploadBCUData();
+..\HARDWARE\RS485\rs485_insulation.c(141): warning:  #177-D: variable "ch"  was declared but never referenced
+  	u8 i=0,ch;
+..\HARDWARE\RS485\rs485_insulation.c(142): warning:  #177-D: variable "not_correct_data"  was declared but never referenced
+  	u8 not_correct_data = 1;
+..\HARDWARE\RS485\rs485_insulation.c: 4 warnings, 0 errors
+compiling adc_power.c...
+..\HARDWARE\ADC\adc_power.h(20): warning:  #1295-D: Deprecated declaration ADC_Inside_Init - give arg types
+  void ADC_Inside_Init();   //该项目需要使用的ST内部ADC功能初始化
+..\HARDWARE\ADC\adc_power.c(112): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	powervolf = (float)powervol * 0.001;
+..\HARDWARE\ADC\adc_power.c(106): warning:  #177-D: variable "adcvol"  was declared but never referenced
+  	u16 adcval,adcvol,powervol;
+..\HARDWARE\ADC\adc_power.c: 3 warnings, 0 errors
+compiling adc_cc.c...
+..\HARDWARE\ADC\adc_power.h(20): warning:  #1295-D: Deprecated declaration ADC_Inside_Init - give arg types
+  void ADC_Inside_Init();   //该项目需要使用的ST内部ADC功能初始化
+..\HARDWARE\ADC\adc_cc.c(24): warning:  #177-D: variable "ccvolf"  was declared but never referenced
+  	float ccvolf;
+..\HARDWARE\ADC\adc_cc.c: 2 warnings, 0 errors
+compiling input_output_ctrl.c...
+..\HARDWARE\RS485\rs485_screen.h(47): warning:  #2775-D: white space is required between the macro name "VOL_B" and its replacement text
+  #define  VOL_B+_ADDR           0x1038  //高压: B+(2字节整数)
+..\HARDWARE\INPUT_OUTPUT_CTRL\input_output_ctrl.c: 1 warning, 0 errors
+compiling rs485_elect_meter.c...
+..\HARDWARE\RS485\rs485_elect_meter.c(178): warning:  #177-D: variable "tmp"  was declared but never referenced
+  	float tmp;
+..\HARDWARE\RS485\rs485_elect_meter.c(179): warning:  #177-D: variable "timecount"  was declared but never referenced
+  	u8 timecount;
+..\HARDWARE\RS485\rs485_elect_meter.c(228): warning:  #177-D: variable "j"  was declared but never referenced
+  	u8 i,ii,j;
+..\HARDWARE\RS485\rs485_elect_meter.c(229): warning:  #177-D: variable "checkcode"  was declared but never referenced
+  	u8 checkcode = 0;
+..\HARDWARE\RS485\rs485_elect_meter.c(230): warning:  #177-D: variable "framelen"  was declared but never referenced
+  	u8 framelen = 0;
+..\HARDWARE\RS485\rs485_elect_meter.c: 5 warnings, 0 errors
+compiling LTC6804.c...
+..\HARDWARE\SPI\LTC6804.c(984): warning:  #223-D: function "vTaskDelay" declared implicitly
+  	vTaskDelay(x);
+..\HARDWARE\SPI\LTC6804.c(982): warning:  #177-D: variable "i"  was declared but never referenced
+  	unsigned int i,j;
+..\HARDWARE\SPI\LTC6804.c(982): warning:  #177-D: variable "j"  was declared but never referenced
+  	unsigned int i,j;
+..\HARDWARE\SPI\LTC6804.c: 3 warnings, 0 errors
+compiling spi_volacq.c...
+compiling Charger.c...
+..\USER\FreeRTOSConfig.h(45): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifdef defined(__ICCARM__) // || defined(__CC_ARM) ||defined(__GUNC__)  //根据CSDN博客修改,更改SystemCoreClock条件编译条件
+..\HARDWARE\RS485\rs485_screen.h(47): warning:  #2775-D: white space is required between the macro name "VOL_B" and its replacement text
+  #define  VOL_B+_ADDR           0x1038  //高压: B+(2字节整数)
+..\HARDWARE\EXTERNCAN\extern_can.h(17): warning:  #1295-D: Deprecated declaration Judge_Msg - give arg types
+  void Judge_Msg();
+..\HARDWARE\GBT27930-2015\Charger.c: 3 warnings, 0 errors
+compiling can1.c...
+..\HARDWARE\CAN\can.h(68): warning:  #1295-D: Deprecated declaration CAN1_Mode_Init - give arg types
+  void CAN1_Mode_Init();
+..\HARDWARE\CAN\can.h(79): warning:  #1295-D: Deprecated declaration start_can1_connect - give arg types
+  void start_can1_connect();
+..\HARDWARE\CAN\can.h(80): warning:  #1295-D: Deprecated declaration CAN1_RxMsg_Process - give arg types
+  u8 CAN1_RxMsg_Process();
+..\HARDWARE\RS485\rs485_screen.h(47): warning:  #2775-D: white space is required between the macro name "VOL_B" and its replacement text
+  #define  VOL_B+_ADDR           0x1038  //高压: B+(2字节整数)
+..\USER\FreeRTOSConfig.h(45): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifdef defined(__ICCARM__) // || defined(__CC_ARM) ||defined(__GUNC__)  //根据CSDN博客修改,更改SystemCoreClock条件编译条件
+..\HARDWARE\CAN\can1.c(280): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  			if(data2f>0.1){
+..\HARDWARE\CAN\can1.c(255): warning:  #177-D: variable "tmpu8"  was declared but never referenced
+  	u8 tmpu8,tmpbcd;
+..\HARDWARE\CAN\can1.c(255): warning:  #177-D: variable "tmpbcd"  was declared but never referenced
+  	u8 tmpu8,tmpbcd;
+..\HARDWARE\CAN\can1.c(257): warning:  #177-D: variable "tmpdata2f"  was declared but never referenced
+  	float tmpdata2f;
+..\HARDWARE\CAN\can1.c(417): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  				dataf = (float)datau32 * 0.001;
+..\HARDWARE\CAN\can1.c(435): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  					printf("V%d:%.3f\r\n",cellnum,((float)datau16)*0.0001);
+..\HARDWARE\CAN\can1.c(513): warning:  #111-D: statement is unreachable
+  			break;
+..\HARDWARE\CAN\can1.c(358): warning:  #177-D: variable "dataarray"  was declared but never referenced
+  	u8 dataarray[8]; //用于处理数据
+..\HARDWARE\CAN\can1.c(359): warning:  #177-D: variable "bmu_i"  was declared but never referenced
+  	u8 bmu_i,cellnum,tempnum,smokenum;
+..\HARDWARE\CAN\can1.c: 14 warnings, 0 errors
+compiling BMS.c...
+..\USER\FreeRTOSConfig.h(45): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifdef defined(__ICCARM__) // || defined(__CC_ARM) ||defined(__GUNC__)  //根据CSDN博客修改,更改SystemCoreClock条件编译条件
+..\HARDWARE\RS485\rs485_screen.h(47): warning:  #2775-D: white space is required between the macro name "VOL_B" and its replacement text
+  #define  VOL_B+_ADDR           0x1038  //高压: B+(2字节整数)
+..\HARDWARE\EXTERNCAN\extern_can.h(17): warning:  #1295-D: Deprecated declaration Judge_Msg - give arg types
+  void Judge_Msg();
+..\SYSTEM\tick\tick.h(4): warning:  #1-D: last line of file ends without a newline
+  uint32_t millis(void);
+..\HARDWARE\GBT27930-2015\BMS.c(136): warning:  #223-D: function "printf" declared implicitly
+  	printf("发送PGN:%x\r\n", pgn);
+..\HARDWARE\GBT27930-2015\BMS.c(151): warning:  #223-D: function "printf" declared implicitly
+      printf("发送BHM\r\n");
+..\HARDWARE\GBT27930-2015\BMS.c(189): warning:  #223-D: function "printf" declared implicitly
+  		printf("发送BRM\r\n");
+..\HARDWARE\GBT27930-2015\BMS.c(168): warning:  #177-D: variable "i"  was declared but never referenced
+  	uint16_t interval = 0, i;
+..\HARDWARE\GBT27930-2015\BMS.c(239): warning:  #223-D: function "printf" declared implicitly
+  	printf("发送BRM数据 - %d\r\n", num);
+..\HARDWARE\GBT27930-2015\BMS.c(257): warning:  #223-D: function "printf" declared implicitly
+  		printf("发送BCP\r\n");
+..\HARDWARE\GBT27930-2015\BMS.c(294): warning:  #223-D: function "printf" declared implicitly
+  	printf("发送BCP数据 - %d\r\n", num);
+..\HARDWARE\GBT27930-2015\BMS.c(311): warning:  #223-D: function "printf" declared implicitly
+  		printf("发送BRO\r\n");
+..\HARDWARE\GBT27930-2015\BMS.c(338): warning:  #223-D: function "printf" declared implicitly
+  		printf("发送BCL\r\n");
+..\HARDWARE\GBT27930-2015\BMS.c(341): warning:  #111-D: statement is unreachable
+  	BCL_Flag = 0 ;
+..\HARDWARE\GBT27930-2015\BMS.c(360): warning:  #223-D: function "printf" declared implicitly
+  		printf("发送BCS\r\n");
+..\HARDWARE\GBT27930-2015\BMS.c(363): warning:  #111-D: statement is unreachable
+  	BCS_Flag = 0;
+..\HARDWARE\GBT27930-2015\BMS.c(386): warning:  #223-D: function "printf" declared implicitly
+  	printf("发送BCS数据 - %d\r\n", num);
+..\HARDWARE\GBT27930-2015\BMS.c(395): warning:  #223-D: function "printf" declared implicitly
+  	printf("CCS超时\r\n");
+..\HARDWARE\GBT27930-2015\BMS.c(434): warning:  #223-D: function "printf" declared implicitly
+  		printf("发送BSM\r\n");
+..\HARDWARE\GBT27930-2015\BMS.c(437): warning:  #111-D: statement is unreachable
+  	BSM_Flag = 0;
+..\HARDWARE\GBT27930-2015\BMS.c(453): warning:  #223-D: function "printf" declared implicitly
+  		printf("发送BST\r\n");
+..\HARDWARE\GBT27930-2015\BMS.c(474): warning:  #223-D: function "printf" declared implicitly
+  		printf("发送BSD\r\n");
+..\HARDWARE\GBT27930-2015\BMS.c(491): warning:  #223-D: function "printf" declared implicitly
+  		printf("发送BEM\r\n");
+..\HARDWARE\GBT27930-2015\BMS.c(578): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	if(data3081>3.65){
+..\HARDWARE\GBT27930-2015\BMS.c(584): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		if(data3081<3.45){
+..\HARDWARE\GBT27930-2015\BMS.c(588): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		}else if(data3081<3.5){
+..\HARDWARE\GBT27930-2015\BMS.c(594): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		if(data3081>3.55){
+..\HARDWARE\GBT27930-2015\BMS.c(598): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		}else if(data3081<3.45){
+..\HARDWARE\GBT27930-2015\BMS.c(604): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		if(data3081>3.55){
+..\HARDWARE\GBT27930-2015\BMS.c(608): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		}else if(data3081>3.5){
+..\HARDWARE\GBT27930-2015\BMS.c(645): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		}else if(data3082>3.5){
+..\HARDWARE\GBT27930-2015\BMS.c(651): warning:  #940-D: missing return statement at end of non-void function "check_CCS_data" 
+  }
+..\HARDWARE\GBT27930-2015\BMS.c: 32 warnings, 0 errors
+compiling extern_can.c...
+..\USER\FreeRTOSConfig.h(45): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifdef defined(__ICCARM__) // || defined(__CC_ARM) ||defined(__GUNC__)  //根据CSDN博客修改,更改SystemCoreClock条件编译条件
+..\HARDWARE\RS485\rs485_screen.h(47): warning:  #2775-D: white space is required between the macro name "VOL_B" and its replacement text
+  #define  VOL_B+_ADDR           0x1038  //高压: B+(2字节整数)
+..\HARDWARE\EXTERNCAN\extern_can.h(17): warning:  #1295-D: Deprecated declaration Judge_Msg - give arg types
+  void Judge_Msg();
+..\SYSTEM\tick\tick.h(4): warning:  #1-D: last line of file ends without a newline
+  uint32_t millis(void);
+..\HARDWARE\EXTERNCAN\extern_can.c(31): warning:  #69-D: integer conversion resulted in truncation
+  	data2818 = CELL_NUM * BATTERY_ENE_ST;    //BCP 动力蓄电池标称总能量kW*h  5000*0.1
+..\HARDWARE\EXTERNCAN\extern_can.c(175): warning:  #177-D: variable "RxMessage"  was declared but never referenced
+  	CanRxMsg RxMessage;
+..\HARDWARE\EXTERNCAN\extern_can.c: 6 warnings, 0 errors
+compiling rs485_DTU.c...
+..\HARDWARE\RS485\rs485_DTU.h(54): warning:  #1295-D: Deprecated declaration DTU_UploadBCUData - give arg types
+  void DTU_UploadBCUData();
+..\HARDWARE\RS485\rs485_DTU.c(203): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
+    RS485_DTU_SendData(upload_data, up_num);
+..\HARDWARE\RS485\rs485_DTU.c(246): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
+    RS485_DTU_SendData(upload_data, up_num);
+..\HARDWARE\RS485\rs485_DTU.c(319): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
+    RS485_DTU_SendData(upload_data, up_num);
+..\HARDWARE\RS485\rs485_DTU.c(370): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
+    RS485_DTU_SendData(upload_data, up_num);
+..\HARDWARE\RS485\rs485_DTU.c(448): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		numstrcount = sprintf(numstr,"%.4f",fdata*0.0001);  //电池电压数字保存4位小数点
+..\HARDWARE\RS485\rs485_DTU.c(486): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
+  	RS485_DTU_SendData(jsondata,jsoncount);
+..\HARDWARE\RS485\rs485_DTU.c(393): warning:  #550-D: variable "loop_c"  was set but never used
+  	u8 loop_i,loop_c,loop_n; //用于循环处理计数
+..\HARDWARE\RS485\rs485_DTU.c(393): warning:  #550-D: variable "loop_n"  was set but never used
+  	u8 loop_i,loop_c,loop_n; //用于循环处理计数
+..\HARDWARE\RS485\rs485_DTU.c(396): warning:  #177-D: variable "volid"  was declared but never referenced
+  	u16 volid;
+..\HARDWARE\RS485\rs485_DTU.c(569): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
+  	RS485_DTU_SendData(jsondata,jsoncount);
+..\HARDWARE\RS485\rs485_DTU.c(698): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
+  	RS485_DTU_SendData(jsondata,jsoncount);	
+..\HARDWARE\RS485\rs485_DTU.c(857): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
+  	RS485_DTU_SendData(jsondata,jsoncount);	
+..\HARDWARE\RS485\rs485_DTU.c: 13 warnings, 0 errors
+compiling croutine.c...
+..\USER\FreeRTOSConfig.h(45): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifdef defined(__ICCARM__) // || defined(__CC_ARM) ||defined(__GUNC__)  //根据CSDN博客修改,更改SystemCoreClock条件编译条件
+..\FreeRTOS\src\croutine.c: 1 warning, 0 errors
+compiling list.c...
+..\USER\FreeRTOSConfig.h(45): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifdef defined(__ICCARM__) // || defined(__CC_ARM) ||defined(__GUNC__)  //根据CSDN博客修改,更改SystemCoreClock条件编译条件
+..\FreeRTOS\src\list.c: 1 warning, 0 errors
+compiling event_groups.c...
+..\USER\FreeRTOSConfig.h(45): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifdef defined(__ICCARM__) // || defined(__CC_ARM) ||defined(__GUNC__)  //根据CSDN博客修改,更改SystemCoreClock条件编译条件
+..\FreeRTOS\src\event_groups.c: 1 warning, 0 errors
+compiling queue.c...
+..\USER\FreeRTOSConfig.h(45): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifdef defined(__ICCARM__) // || defined(__CC_ARM) ||defined(__GUNC__)  //根据CSDN博客修改,更改SystemCoreClock条件编译条件
+..\FreeRTOS\src\queue.c: 1 warning, 0 errors
+compiling stream_buffer.c...
+..\USER\FreeRTOSConfig.h(45): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifdef defined(__ICCARM__) // || defined(__CC_ARM) ||defined(__GUNC__)  //根据CSDN博客修改,更改SystemCoreClock条件编译条件
+..\FreeRTOS\src\stream_buffer.c: 1 warning, 0 errors
+compiling timers.c...
+..\USER\FreeRTOSConfig.h(45): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifdef defined(__ICCARM__) // || defined(__CC_ARM) ||defined(__GUNC__)  //根据CSDN博客修改,更改SystemCoreClock条件编译条件
+..\FreeRTOS\src\timers.c: 1 warning, 0 errors
+compiling iic_fun.c...
+..\HARDWARE\ADC\iic_fun.c(183): warning:  #940-D: missing return statement at end of non-void function "IIC_SDA_IN" 
+  }
+..\HARDWARE\ADC\iic_fun.c: 1 warning, 0 errors
+compiling heap_4.c...
+..\USER\FreeRTOSConfig.h(45): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifdef defined(__ICCARM__) // || defined(__CC_ARM) ||defined(__GUNC__)  //根据CSDN博客修改,更改SystemCoreClock条件编译条件
+..\FreeRTOS\port\MemMang\heap_4.c: 1 warning, 0 errors
+compiling iic_LTC2305.c...
+..\HARDWARE\ADC\iic_LTC2305.c(68): warning:  #550-D: variable "ack_flag"  was set but never used
+  	u8 ack_flag = 1;
+..\HARDWARE\ADC\iic_LTC2305.c: 1 warning, 0 errors
+compiling tasks.c...
+..\USER\FreeRTOSConfig.h(45): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifdef defined(__ICCARM__) // || defined(__CC_ARM) ||defined(__GUNC__)  //根据CSDN博客修改,更改SystemCoreClock条件编译条件
+..\FreeRTOS\src\tasks.c: 1 warning, 0 errors
+compiling soc_Vmin_EKF.c...
+..\HARDWARE\SOC\soc_Vmin_EKF.c(149): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	xk = xk_1 + eta*t*ik_1/Cn;  //电流积分
+..\HARDWARE\SOC\soc_Vmin_EKF.c(112): warning:  #177-D: variable "yk"  was declared but never referenced
+  	float yk;  //float类型单体电压值
+..\HARDWARE\SOC\soc_Vmin_EKF.c(113): warning:  #177-D: variable "Pk_1"  was declared but never referenced
+  	float xk_1,Pk_1;  //前一时刻的状态变量和协方差(k_1表示k-1,即前一时刻)
+..\HARDWARE\SOC\soc_Vmin_EKF.c(114): warning:  #177-D: variable "xk_"  was declared but never referenced
+  	float xk_,Pk_;    //时间更新方程计算得到的值,即分别表示xk-和Pk-
+..\HARDWARE\SOC\soc_Vmin_EKF.c(114): warning:  #177-D: variable "Pk_"  was declared but never referenced
+  	float xk_,Pk_;    //时间更新方程计算得到的值,即分别表示xk-和Pk-
+..\HARDWARE\SOC\soc_Vmin_EKF.c(115): warning:  #177-D: variable "Ck"  was declared but never referenced
+  	float Ck,Kk;
+..\HARDWARE\SOC\soc_Vmin_EKF.c(115): warning:  #177-D: variable "Kk"  was declared but never referenced
+  	float Ck,Kk;
+..\HARDWARE\SOC\soc_Vmin_EKF.c(116): warning:  #177-D: variable "gk"  was declared but never referenced
+  	float gk;
+..\HARDWARE\SOC\soc_Vmin_EKF.c: 8 warnings, 0 errors
+compiling voltbalance.c...
+compiling port.c...
+..\USER\FreeRTOSConfig.h(45): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifdef defined(__ICCARM__) // || defined(__CC_ARM) ||defined(__GUNC__)  //根据CSDN博客修改,更改SystemCoreClock条件编译条件
+..\FreeRTOS\port\RVDS\ARM_CM4F\port.c: 1 warning, 0 errors
+compiling stmflash.c...
+compiling cc936.c...
+compiling faultalarm.c...
+..\USER\FreeRTOSConfig.h(45): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifdef defined(__ICCARM__) // || defined(__CC_ARM) ||defined(__GUNC__)  //根据CSDN博客修改,更改SystemCoreClock条件编译条件
+..\HARDWARE\RS485\rs485_screen.h(47): warning:  #2775-D: white space is required between the macro name "VOL_B" and its replacement text
+  #define  VOL_B+_ADDR           0x1038  //高压: B+(2字节整数)
+..\HARDWARE\ALARM\faultalarm.c: 2 warnings, 0 errors
+compiling sdio_sdcard.c...
+..\HARDWARE\SDIO\sdio_sdcard.c(1692): warning:  #223-D: function "delay_ms" declared implicitly
+  		delay_ms(500);
+..\HARDWARE\SDIO\sdio_sdcard.c(1698): warning:  #223-D: function "delay_ms" declared implicitly
+  		delay_ms(200);
+..\HARDWARE\SDIO\sdio_sdcard.c(1723): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
+  	sprintf(str, "value:%f\r\n", soc);
+..\HARDWARE\SDIO\sdio_sdcard.c(1737): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
+  	sprintf(str, "value:%f id:%d\r\n", voltage, id);
+..\HARDWARE\SDIO\sdio_sdcard.c(1751): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
+  	sprintf(str, "value:%f id:%d\r\n", temperature, id);
+..\HARDWARE\SDIO\sdio_sdcard.c: 5 warnings, 0 errors
+compiling ff.c...
+compiling exfuns.c...
+compiling diskio.c...
+compiling usmart_config.c...
+compiling usmart_str.c...
+compiling malloc.c...
+compiling fattester.c...
+compiling quick_sort.c...
+compiling usmart.c...
+linking...
+Program Size: Code=62914 RO-data=177254 RW-data=1280 ZI-data=1348192  
+FromELF: creating hex file...
+".\Objects\Template.axf" - 0 Error(s), 170 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.15.0.pack
+                Keil.STM32F4xx_DFP.2.15.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  F:\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+
+<h2>Collection of Component Files used:</h2>
+Build Time Elapsed:  00:00:07
+</pre>
+</body>
+</html>
