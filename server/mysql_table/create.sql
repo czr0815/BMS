@@ -213,7 +213,7 @@ CREATE TABLE IF NOT EXISTS `bms_warning` (
 CREATE TABLE IF NOT EXISTS `bms_order` (
     `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
     `order_type` tinyint(2) NOT NULL DEFAULT 0 COMMENT '订单类型',
-    `station_id` int(10) unsigned COMMENT '从属BSU',
+    `station_id` int(10) unsigned COMMENT '从属储能站',
     `bcu_id` int(10) unsigned COMMENT '从属BCU',
     `status` tinyint(2) NOT NULL DEFAULT 1 COMMENT '当前进行状态',
     `electricity` float NOt NULL DEFAULT 0 COMMENT '订单电量',

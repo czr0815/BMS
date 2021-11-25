@@ -825,7 +825,7 @@ void LTC6804_wrcfg(uint8_t chip,
   const uint8_t BYTES_IN_REG = 6;
   const uint8_t CMD_LEN = 4+(8*total_ic);
   uint8_t cmd[124];
-  uint16_t cfg_pec;
+  uint16_t cmd_pec, cfg_pec;
   uint8_t cmd_index; //command counter
 	
 	uint8_t current_ic;
@@ -835,15 +835,17 @@ void LTC6804_wrcfg(uint8_t chip,
   //1
   cmd[0] = 0x00;
   cmd[1] = 0x01;
-  cmd[2] = 0x3d;
-  cmd[3] = 0x6e;
+	cmd_pec = (uint16_t)pec15_calc(2, cmd);
+  cmd[2] = (uint8_t)(cmd_pec >> 8);
+  cmd[3] = (uint8_t)(cmd_pec);
+  //cmd[2] = 0x3d;
+  //cmd[3] = 0x6e;
 
   //2
   cmd_index = 4;
   for ( current_ic = total_ic; current_ic > 0; current_ic--) 			// executes for each LTC6804 in daisy chain, this loops starts with
   {																				// the last IC on the stack. The first configuration written is
 																				// received by the last IC in the daisy chain
-
     for ( current_byte = 0; current_byte < BYTES_IN_REG; current_byte++) // executes for each of the 6 bytes in the CFGR register
     {																			// current_byte is the byte counter
 

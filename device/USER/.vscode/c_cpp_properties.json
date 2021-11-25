@@ -32,6 +32,8 @@
                 "d:\\KeilProject\\BMS\\BMS with GBT\\FATFS\\exfuns",
                 "d:\\KeilProject\\BMS\\BMS with GBT\\FATFS\\src",
                 "d:\\KeilProject\\BMS\\BMS with GBT\\HARDWARE\\QUICKSORT",
+                "F:\\Keil_v5\\ARM\\ARMCC\\include",
+                "F:\\Keil_v5\\ARM\\ARMCC\\include\\rw",
                 "d:\\KeilProject\\BMS\\BMS with GBT\\FWLIB\\src",
                 "d:\\KeilProject\\BMS\\BMS with GBT\\FreeRTOS\\src",
                 "d:\\KeilProject\\BMS\\BMS with GBT\\FreeRTOS\\port\\MemMang",

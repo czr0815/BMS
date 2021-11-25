@@ -721,7 +721,8 @@ void bmu_balance_task(void)
 		for(loop_i=0;loop_i<BMU_VOL_NUM;++loop_i){
 			if(BalanceFlag[loop_i] != BalanceState[loop_i]){
 
-				resultflag = set_cell_discharge(loop_i,BalanceFlag[loop_i]);  //直接使用BalanceFlag状态向量开启/关闭均衡
+				resultflag = set_cell_discha
+				rge(loop_i,BalanceFlag[loop_i]);  //直接使用BalanceFlag状态向量开启/关闭均衡
 				
 				if(resultflag==1){  //如果更改成功
 					BalanceState[loop_i] = BalanceFlag[loop_i];  //修改当前均衡状态向量

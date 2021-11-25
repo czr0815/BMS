@@ -41,7 +41,7 @@ u8 SPI1_ReadWriteByte(u8 TxData);//SPI1总线读写一个字节
 float temp_data(u16 adcv,u16 vref);  //将LTC6804芯片模拟输入数据转换为温度数据
 u8 readvol(uint8_t chip); //,uint16_t* cellvol);  //读取第chip个芯片上的单体电池电压数据,并将其保存到全局变量cellvol[chip][]中		 
 u8 readtemp(uint8_t chip); //,uint16_t* temp,float* tempf);  //读取第chip个芯片上的模拟数据,获取对应的温度传感器数据,并将其保存到全局变量temp[chip][]中
-u8 set_batteryequ(uint8_t chip,uint8_t celln,uint8_t state);  //开启(s=1)/关闭(s=0)第chip个芯片上的第celln个电池模块的均衡功能
+u8 set_cell_discharge(uint8_t cellnum,uint8_t state);  //开启(s=1)/关闭(s=0)第cellnum个电池模块的均衡功能
 
 #endif
 

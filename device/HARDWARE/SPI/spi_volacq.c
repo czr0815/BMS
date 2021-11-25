@@ -187,13 +187,107 @@ u8 readtemp(uint8_t chip)
 	return 1;
 }
 
-//开启(s=1)/关闭(s=0)第chip个芯片上的第celln个电池模块的均衡功能
-u8 set_batteryequ(uint8_t chip,uint8_t celln,uint8_t state)
+/*开启(s=1)/关闭(s=0)第cellnum个电池点的放电控制
+过程:根据cellnum读对应chip的寄存器,修改寄存器中的某一位,然后将寄存器写入
+参数:cellnum的范围为0-47,即电池点从0开始,与单体电压的下标保持一致;state为0表示关闭,为1时表示开启
+返回值:成功返回1,失败返回0
+*/
+u8 set_cell_discharge(uint8_t cellnum,uint8_t state)
+{
+// 可用函数	
+// void LTC6804_wrcfg(uint8_t chip, uint8_t nIC,uint8_t config[][6]);//写配置寄存器
+// int8_t LTC6804_rdcfg(uint8_t chip, uint8_t nIC, uint8_t r_config[][8]);//读配置寄存器
+	
+	int8_t flag,i,test_ch;
+	u8 chip,pointid;      //保存对应的芯片和均衡控制电池编号
+	u8 tmp_rconfig[1][8];  //保存读取到的对应芯片的配置寄存器
+	u8 tmp_wconfig[1][6];  //保存要写入对应芯片的配置寄存器
+	
+	if(cellnum>=BMU_VOL_NUM){
+		return 0;
+	}
+		
+	chip = cellnum / 12;
+	pointid = cellnum % 12;
+	
+	flag = LTC6804_rdcfg(chip, 1, tmp_rconfig);
+	
+	//测试
+	test_ch = tmp_rconfig[0][4];
+	
+	if(flag==-1){
+		printf("LT6804 chip%d config register read failed.\r\n",chip);
+		return 0;
+	}
+	else{
+		for(i=0;i<6;++i){  //复制寄存器配置
+			tmp_wconfig[0][i] = tmp_rconfig[0][i];
+		}
+		if(state==1){
+			if(pointid<8){  //电池点为0-7
+				tmp_wconfig[0][4] = tmp_wconfig[0][4] | (0x01<<pointid);
+			}
+			else{
+				pointid = pointid - 8;  //电池点为8-11
+				tmp_wconfig[0][5] = tmp_wconfig[0][5] | (0x01<<pointid);
+			}
+		}
+		else if(state==0)
+		{
+			if(pointid<8){  //电池点为0-7
+				tmp_wconfig[0][4] = tmp_wconfig[0][4] & (~(0x01<<pointid));
+			}
+			else{
+				pointid = pointid - 8;  //电池点为8-11
+				tmp_wconfig[0][5] = tmp_wconfig[0][5] & (~(0x01<<pointid));
+			}			
+		}
+			
+		//测试
+		flag = 2;
+		
+		LTC6804_wrcfg(chip, 1, tmp_wconfig);
+	}
+
+		//测试
+		//LTC6804_wrcfg(chip, 1, tmp_wconfig);	
+	
+	return 1;
+}
+
+/*关闭所有电池点的放电控制
+过程:依次读取多个chip的寄存器,修改将所有的DCC[x]为0,再将寄存器写入
+*/
+u8 cell_discharge_disable()
 {
 	
-
+	int8_t flag,i;
+	u8 chip,pointid;      //保存对应的芯片和均衡控制电池编号
+	u8 tmp_rconfig[1][8];  //保存读取到的对应芯片的配置寄存器
+	u8 tmp_wconfig[1][6];  //保存要写入对应芯片的配置寄存器
 	
-	return 0;
+	for(chip=0;chip<BMU_VOLCHIP_NUM;chip++){
+		
+		flag = LTC6804_rdcfg(chip, 1, tmp_rconfig);
+		
+		if(flag==-1){
+			printf("LT6804 chip%d discharge disable failed.\r\n",chip);
+			return 0;
+		}
+		else{
+			for(i=0;i<6;++i){  //复制寄存器配置
+				tmp_wconfig[0][i] = tmp_rconfig[0][i];
+			}
+			
+			tmp_wconfig[0][4] = 0;
+
+			tmp_wconfig[0][5] = tmp_wconfig[0][5] & 0xF0;
+			
+			LTC6804_wrcfg(chip, 1, tmp_wconfig);
+		}
+		
+	}
+	return 1;	
 }
 	
 #endif
